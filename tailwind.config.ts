@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         hero: 'url("/hero.png")',
+        "red-gradient":
+          "linear-gradient(92deg, rgb(34 211 238) 2.87%, rgb(67 56 202) 96.18%)",
       },
     },
   },
