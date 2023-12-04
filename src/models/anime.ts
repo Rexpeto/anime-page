@@ -1,15 +1,24 @@
 export interface AnimeResult {
-  id: string;
+  id: number;
   name: string;
-  image: {
-    original: string;
-  };
+  russian: string;
+  image: Image;
+  url: string;
   kind: string;
+  score: string;
+  status: string;
   episodes: number;
   episodes_aired: number;
-  score: string;
+  aired_on: string;
+  released_on: any;
 }
 
+export interface Image {
+  original: string;
+  preview: string;
+  x96: string;
+  x48: string;
+}
 export interface AnimeResponse {
   anime: AnimeResult;
   index: number;
