@@ -1,4 +1,4 @@
-import { Card } from "@/components";
+import { Card, LoadMore } from "@/components";
 import { AnimeResult, animeData } from "@/models";
 
 const Home = () => {
@@ -11,6 +11,8 @@ const Home = () => {
           <Card key={item.id} anime={item} />
         ))}
       </section>
+
+      <LoadMore />
     </main>
   );
 };
