@@ -7,10 +7,10 @@ const Card = ({ anime }: { anime: AnimeResult }) => {
     <div className="relative max-w-sm w-full rounded">
       <div className="relative h-80 w-full">
         <Image
-          src={anime.image.original}
+          src={`${process.env.URL_API}${anime.image.original}`}
           alt={anime.name}
-          className="rounded-xl object-contain"
           fill
+          className="rounded-xl"
         />
       </div>
 
