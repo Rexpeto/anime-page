@@ -7,7 +7,7 @@ const Card = ({ anime }: { anime: AnimeResult }) => {
     <div className="relative max-w-sm w-full rounded">
       <div className="relative h-80 w-full">
         <Image
-          src={`${process.env.URL_API}${anime.image.original}`}
+          src={`https://shikimori.one${anime.image.original}`}
           alt={anime.name}
           fill
           className="rounded-xl"
