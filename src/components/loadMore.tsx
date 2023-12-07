@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useInView } from "react-intersection-observer";
 import GetIcon from "./getIcons";
@@ -7,12 +7,13 @@ import { fetchAnime } from "@/services";
 import { AnimeResult } from "@/models";
 import { Card } from ".";
 
-
 let page = 2;
 
 const LoadMore = () => {
+  type AnimeCard = JSX.Element;
+
   const { ref, inView } = useInView();
-  const [data, setData] = useState<AnimeResult[]>([]);
+  const [data, setData] = useState<AnimeCard[]>([]);
 
   useEffect(() => {
     if (inView) {
@@ -23,10 +24,8 @@ const LoadMore = () => {
 
   return (
     <>
-      <section className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-        {data.map((item: AnimeResult) => (
-          <Card key={item.id} anime={item} />
-        ))}
+      <section className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-10">
+        {data}
       </section>
 
       <section ref={ref} className="flex justify-center items-center w-full">
