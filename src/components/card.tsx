@@ -1,10 +1,27 @@
 import { AnimeResult } from "@/models";
 import Image from "next/image";
 import GetIcon from "./getIcons";
+import { MotionDiv } from "./motionDiv";
 
-const Card = ({ anime }: { anime: AnimeResult }) => {
+const Card = ({ anime, index }: { anime: AnimeResult; index: number }) => {
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <div className="relative max-w-sm w-full rounded">
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        duration: 0.5,
+        delay: index * 0.25,
+        ease: "easeInOut",
+      }}
+      viewport={{ amount: 0 }}
+      className="relative max-w-sm w-full rounded"
+    >
       <div className="relative h-80 w-full">
         <Image
           src={`https://shikimori.one${anime.image.original}`}
@@ -41,7 +58,7 @@ const Card = ({ anime }: { anime: AnimeResult }) => {
           </div>
         </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 };
 
